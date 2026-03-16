@@ -312,7 +312,71 @@ document.body.style.color="black"
 }
 
 displayItems()
+#include <iostream>
+using namespace std;
 
+int main() {
+    cout << "============================\n";
+    cout << "    🌍 GLOBAL MARKETPLACE    \n";
+    cout << "============================\n";
+    cout << "1. Voir les annonces\n";
+    cout << "2. Ajouter un objet\n";
+    cout << "3. Chat avec vendeur\n";
+    cout << "4. Paramètres\n";
+    cout << "Choisissez une option: ";
+    int choix;
+    cin >> choix;
+
+    switch(choix){
+        case 1: cout << "Liste des objets...\n"; break;
+        case 2: cout << "Ajouter un objet...\n"; break;
+        case 3: cout << "Chat...\n"; break;
+        case 4: cout << "Paramètres...\n"; break;
+        default: cout << "Option invalide\n";
+    }
+
+    return 0;
+}
+  import java.util.ArrayList;
+import java.util.Scanner;
+
+class Item {
+    String title;
+    double price;
+    String category;
+
+    Item(String t, double p, String c){
+        title = t;
+        price = p;
+        category = c;
+    }
+}
+
+public class Marketplace {
+
+    public static void main(String[] args){
+        ArrayList<Item> items = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("Ajouter un objet:");
+        System.out.print("Titre: ");
+        String title = sc.nextLine();
+        System.out.print("Prix: ");
+        double price = sc.nextDouble();
+        sc.nextLine(); // consume newline
+        System.out.print("Catégorie: ");
+        String category = sc.nextLine();
+
+        items.add(new Item(title, price, category));
+
+        System.out.println("Liste des objets:");
+        for(Item item : items){
+            System.out.println(item.title + " - " + item.price + "€ - " + item.category);
+        }
+
+        sc.close();
+    }
+}
 </script>
 
 </body>
